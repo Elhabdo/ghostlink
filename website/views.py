@@ -32,7 +32,10 @@ def open(req):
     if req.method == "GET":
         s_url = req.build_absolute_uri()
         l_url = longurl(s_url)
-        return redirect(l_url)
+        if l_url == None:
+            return render(req,"404.html",{})
+        else:
+            return redirect(l_url)
     else:
         pass
 
@@ -40,5 +43,7 @@ def longurl(url):
     hashid = url.split("/")[3]
     reqq = requests.get("https://rel.ink/api/links/" + hashid)
     reqq_json = simplejson.loads(reqq.text)
+    if reqq_json['detail'] != "":
+        return None
     url_long = reqq_json['url']
     return url_long
