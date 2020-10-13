@@ -3,7 +3,7 @@ from django.http import HttpRequest
 import requests
 import json as simplejson
 
-_MYHOST = "https://protected-lowlands-73311.herokuapp.com/"
+_MYHOST = "http://www.ghostlnk.ga/"
 # Create your views here.
 
 def home(req):
