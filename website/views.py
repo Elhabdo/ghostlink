@@ -18,8 +18,9 @@ def posst(req):
     }
     return render(req,"shorted.html",data)
 
-def shortcut(url):
-    url = "https://"+url
+def shortcut(url:str):
+    if not url.startswith("https://") or url.startswith("https://"):
+        url = "https://"+url
     data = {"url": url}
     response = requests.post('https://rel.ink/api/links/', json=data)
     response_json = simplejson.loads(response.text)
