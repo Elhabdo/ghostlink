@@ -19,7 +19,7 @@ def posst(req):
     return render(req,"shorted.html",data)
 
 def shortcut(url:str):
-    if not url.startswith("https://") or url.startswith("https://"):
+    if not url.startswith("https://") or not url.startswith("https://"):
         url = "https://"+url
     data = {"url": url}
     response = requests.post('https://rel.ink/api/links/', json=data)
