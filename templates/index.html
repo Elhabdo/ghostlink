@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to shortner</h1>
+    <form class="form" method="post" action="./shorted/">
+            {% csrf_token %}
+        <input type="text" name="long_url" placeholder="Enter url to short link :" class="inpt">
+        <input type="submit" name="Shortcut" class="inpt">
+    </form>
+
+</div>
+
+</body>
+</html>
