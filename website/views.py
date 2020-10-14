@@ -1,26 +1,31 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.http import HttpRequest
 import requests
 import json as simplejson
 
-_MYHOST = "http://www.ghostlnk.ga/"
+_MYHOST = "http://127.0.0.1:8000/"
+
+
+# _MYHOST = "http://www.ghostlnk.ga/"
 # Create your views here.
 
 def home(req):
-    return render(req, "index.html",{})
+    return render(req, "index.html", {})
+
 
 def posst(req):
     url = req.POST["long_url"]
     url_f = shortcut(url)
     data = {
-        "url" : url_f,
-        "old_url" : url
+        "url": url_f,
+        "old_url": url
     }
-    return render(req,"shorted.html",data)
+    return render(req, "shorted.html", data)
 
-def shortcut(url:str):
+
+def shortcut(url: str):
     if not url.startswith("https://") or not url.startswith("https://"):
-        url = "https://"+url
+        url = "https://" + url
     data = {"url": url}
     response = requests.post('https://rel.ink/api/links/', json=data)
     response_json = simplejson.loads(response.text)
@@ -28,22 +33,25 @@ def shortcut(url:str):
     url_f = _MYHOST + url_short
     return url_f
 
+
 def open(req):
     if req.method == "GET":
         s_url = req.build_absolute_uri()
         l_url = longurl(s_url)
         if l_url == None:
-            return render(req,"404.html",{})
+            return render(req, "404.html", {})
         else:
             return redirect(l_url)
     else:
         pass
 
+
 def longurl(url):
     hashid = url.split("/")[3]
     reqq = requests.get("https://rel.ink/api/links/" + hashid)
     reqq_json = simplejson.loads(reqq.text)
-    if reqq_json['detail'] != "":
+    if 'detail' in reqq_json:
         return None
-    url_long = reqq_json['url']
-    return url_long
+    else:
+        url_long = reqq_json['url']
+        return url_long

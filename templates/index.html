@@ -4,25 +4,36 @@
     <meta charset="UTF-8">
     <title>Ghost link</title>
     <link rel="stylesheet" href="/static/css/style.css">
-
+<link rel="shortcut icon" href="/static/img/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <nav>
     <div>
-    <a class="logo">Ghost link</a></div>
+    <a class="logo" href="/">Ghost link</a></div>
     <div>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="https://github.com/Elhabdo/"  target="_blank"><i class="fa fa-github" style="font-size:30px;color: white"></i></a>
+        <a href="https://www.linkedin.com/in/abdelmounaim-elhaila-88a3a71a0/"  target="_blank"><i class="fa fa-linkedin" style="font-size:30px;color: white"></i></a>
+        <a href="#"  target="_blank"><i class="fa fa-code" style="font-size:30px;color: white"></i></a>
     </div>
 </nav>
+<div class="welcome">
+
+</div>
 
 <div class="container">
     <div class="text-typing">
         <p>Welcome to Ghost link&nbsp;</p>
     </div>
+        <div class="text-typing home">
+        <p>Open source URL Shortener >
+            <a href="https://github.com/Elhabdo/ghostlink"  target="_blank"><i class="fa fa-github" style="font-size:30px;color: white"></i></a>
+        </p>
+
+    </div>
     <form class="form" method="post" action="./shorted/">
             {% csrf_token %}
-        <input type="text" name="long_url" placeholder="exemple.com" class="inpt" autocomplete="off">
+        <input type="text" name="long_url" placeholder="exemple.com" class="inpt" autocomplete="off" required>
         <button type="submit" name="Shortcut" class="btn">Ghost It!</button>
     </form>
 </div>

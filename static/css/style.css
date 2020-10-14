@@ -24,13 +24,9 @@ body {
   flex-direction: column;
   justify-content: initial;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
-.container h1 {
-  margin-bottom: 100px;
-  color: #fff;
-}
 .form{
   display: flex;
   justify-content: space-between;
@@ -42,6 +38,8 @@ body {
   font-size:35px;
   font-family:monospace;
   border-radius:50px;
+    box-shadow:rgba(4, 42, 43, 0.36) 0px 5px;
+
 }
 .btn{
     padding:20px 30px;
@@ -51,6 +49,7 @@ body {
   color: white;
   border-radius:50px;
 }
+
 .btn:hover{
   background: #FFB400;
     color: black;
@@ -58,18 +57,29 @@ body {
     padding:16px 26px;
 
 }
+.btn-small{
+    background: #FFB400;
+  padding:10px 15px;
+
+}
+.btn-small:hover{
+  padding:10px 15px;
+    border: 2px solid black;
+
+}
 /*nav bar css*/
 nav{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  justify-items: center;
-    background-color: #042a2b;
+align-items: center;
+  background-color: #042a2b;
     border-radius:50px;
   margin-top: 10px;
   margin-left: 80px;
   margin-right: 80px;
     padding: 20px 80px;
+  box-shadow:rgba(4, 42, 43, 0.36) 0px 5px;
 
 }
 nav a:visited {
@@ -85,6 +95,7 @@ nav a:hover{
   border-bottom:5px solid #FFB400 ;
 }
 
+
 /*Text typing effect*/
 .text-typing {
   margin-bottom: 50px;
@@ -93,6 +104,9 @@ nav a:hover{
   font-size:35px;
   border-radius:50px;
 
+}
+.lgo{
+color: #FFB400;
 }
 .text-typing p {
   margin:0px;
@@ -107,9 +121,21 @@ nav a:hover{
 }
 @keyframes blink {
   0%,100% {
-    border-right:2px solid transparent;
+    border-right:2px solid #222;
   }
   50% {
     border-right:2px solid #222;
   }
+}
+.home{
+  background-color: rgba(4, 42, 43, 0.36);
+  color: white;
+    border-radius:20px;
+
+}
+.welcome{
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
 }
