@@ -3,10 +3,10 @@ from django.http import HttpRequest
 import requests
 import json as simplejson
 
-_MYHOST = "http://127.0.0.1:8000/"
+#_MYHOST = "http://127.0.0.1:8000/"
 
 
-# _MYHOST = "http://www.ghostlnk.ga/"
+_MYHOST = "http://www.ghostlnk.ga/"
 # Create your views here.
 
 
